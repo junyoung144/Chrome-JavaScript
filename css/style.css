@@ -95,6 +95,92 @@ body {
 }
 #clock {
   font-size: 32px;
-  color: #494949;
+  color: #fff;
   font-weight: 600;
+}
+
+#quote {
+  position: absolute;
+  bottom: 30px;
+  background-color: #ffffff6f;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 15px;
+}
+#quote span:first-child {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #fff;
+}
+#quote span:last-child {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.todo-list__box {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 400;
+}
+
+#todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  text-align: center;
+}
+#weather {
+  display: flex;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
+  color: #fff;
+}
+#todo-form input {
+  background-color: #ffffff00;
+  border: none;
+  width: 400px;
+  height: 40px;
+  border-bottom: 2px solid #fff;
+  font-size: 24px;
+  color: #fff;
+}
+#todo-form input::placeholder {
+  color: #fff;
+  font-size: 24px;
+}
+#todo-form input:focus {
+  outline: none;
+}
+
+#todo-list li {
+  display: flex;
+  list-style: none;
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #fff;
+}
+#todo-list button {
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+  border: 2px solid #fff;
+  background-color: #ffffff00;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 5px;
+}
+#todo-list button:hover {
+  color: #000;
+  border: 2px solid #000;
 }
