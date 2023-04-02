@@ -18,10 +18,10 @@ function onLogInSubmit(event) {
 function paintGreetings(username) {
   greeting.innerText = `Hello, ${username}`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
-  setTimeout("move_page()", 2000); //2초후에 move_page함수실행
+  setTimeout("move_page()", 2000);
 }
 function move_page() {
-  location.href = "login.html"; // 페이지 이동
+  location.href = "login.html";
 }
 
 loginForm.addEventListener("submit", onLogInSubmit);
