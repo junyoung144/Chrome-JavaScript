@@ -18,12 +18,13 @@ function onLogInSubmit(event) {
 function paintGreetings(username) {
   greeting.innerText = `Hello, ${username}`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
-  setTimeout("move_page()", 2000);
+  setTimeout(move_page, 2000);
 }
 function move_page() {
-  location.href = "login.html";
+  const newUrl = "login.html";
+  history.replaceState(null, null, newUrl);
+  location.href = newUrl;
 }
-
 loginForm.addEventListener("submit", onLogInSubmit);
 
 const localStorageUsername = localStorage.getItem(USERNAME_KEY);
@@ -34,4 +35,26 @@ if (localStorageUsername === null) {
   loginForm.addEventListener("submit", onLogInSubmit);
 } else {
   paintGreetings(localStorageUsername);
+}
+
+function smoothPageTransition(event, targetPage) {
+  event.preventDefault();
+  const targetPageUrl = targetPage.getAttribute('href');
+
+  document.querySelector('body').style.opacity = 0;
+
+  setTimeout(() => {
+    window.location.href = targetPageUrl;
+  }, 500);
+}
+
+const links = document.querySelectorAll('a');
+for (let i = 0; i < links.length; i++) {
+  const link = links[i];
+  const isInternalLink = link.getAttribute('href').startsWith('/');
+  if (isInternalLink) {
+    link.addEventListener('click', (event) => {
+      smoothPageTransition(event, link);
+    });
+  }
 }
